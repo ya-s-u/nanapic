@@ -2,13 +2,11 @@
 App::uses('Controller', 'Controller');
 
 class AppController extends Controller {
-	public $uses = array('User','Following','Country');
+	public $uses = array('User','Post','PostLink');
+	public $layout = 'Common';
 	public $helpers = array('Html','Form','Session');
 	public $components = array(
 		'Session',
-		'Map',
-		'Twitter',
-		'Cookie',
 		'Auth' => array(
 	        'authenticate' => array(
 	            'Form' => array(
@@ -21,9 +19,9 @@ class AppController extends Controller {
 	        ),
 	        'loginError' => 'パスワードもしくはログインIDをご確認下さい。',
 	        'authError' => 'ご利用されるにはログインが必要です。',
-	        'loginAction' => array('controller' => 'users', 'action' => 'create'),
-	        'loginRedirect' => array('controller' => 'friends', 'action' => 'index'),
-	        'logoutRedirect' => array('controller' => 'users', 'action' => 'create'),
+	        'loginAction' => array('controller' => 'posts', 'action' => 'index'),
+	        'loginRedirect' => array('controller' => 'users', 'action' => 'index'),
+	        'logoutRedirect' => array('controller' => 'posts', 'action' => 'index'),
 	    ),
 	);
 
