@@ -84,6 +84,38 @@ class User extends AppModel {
 
 		return;
 	}
+	
+	/**
+	* ユーザー情報を取得
+	*/
+	public function getUser($id) {
+		$params = array(
+			'conditions' => array(
+				'User.id' => $id,
+			),
+			'fields' => Array(
+			),
+		);
+		$user = $this->find('first',$params);
+
+		return $user;
+	}
+	
+	/**
+	* ユーザー一覧を取得
+	*/
+	public function getAllUser() {
+		$params = array(
+			'conditions' => array(
+			),
+			'fields' => Array(
+			),
+		);
+		$Users = $this->find('all',$params);
+		
+		return $Users;
+	}
 
 }
 ?>
+
