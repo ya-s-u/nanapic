@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
@@ -11,12 +11,12 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	
-	<link rel="shortcut icon" href="<?= $this->Html->webroot.'img/fav.ico' ?>">
-	<link rel="apple-touch-icon-precomposed" href="<?= $this->Html->webroot.'img/fav.ico' ?>" />
+	<link rel="shortcut icon" href="<?=$this->Html->webroot.'img/fav.ico'?>">
+	<link rel="apple-touch-icon-precomposed" href="<?=$this->Html->webroot.'img/fav.ico'?>" />
 	
-	<title><?= $title_for_layout ?> - nanapic</title>
+	<title><?=$title_for_layout?> - nanapic</title>
 		
-	<?= $this->Html->css('common') ?>
+	<?=$this->Html->css('common')?>
 </head>
 <body>
 	<div id="header">
@@ -26,19 +26,25 @@
 				<li><a href="/">新着まとめ</a></li>
 				<li><a href="/curators">キュレーター一覧</a></li>
 			</ul>
-			<h1><a href="//nanapi.trial.jp"><?= $this->Html->image('logo.png') ?></a></h1>
+			<h1><a href="//nanapi.trial.jp"><?=$this->Html->image('logo.png')?></a></h1>
 			<ul class="user_menu">
 				<li><a href="/users" class="btn dashboard">マイページ</a></li>
 				<li><a href="/users/logout" class="btn logout">ログアウト</a></li>
 			</ul>
 		</div>
 	</div>
-	<?= $this->fetch('content') ?>
+	<?=$this->fetch('content')?>
 	<div id="footer">
 		<div class="container">
 		
 		</div>
 	</div>
-<?= $this->html->script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js') ?>
+<script type="text/javascript">
+var APIKEY = 4cb94f0895324;
+</script>
+<?=$this->html->script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')?>
+<?=$this->html->script('//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js')?>
+<?=$this->html->script('jquery.sortable')?>
+<?=$this->html->script('angular.myfunc')?>
 </body>
 </html>

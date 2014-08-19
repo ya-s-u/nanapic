@@ -7,7 +7,7 @@
 		</ul>
 	</div>
 </div>
-<div class="main">
+<div class="main" ng-controller="CreateCtrl">
 	<div class="container">
 		<h2>新規投稿</h2>
 		<p class="h2_sub">キュレーション記事を作成します。</p>
@@ -20,13 +20,11 @@
 				</div>
 				<div class="select_article_body">
 					<ul class="select_article_list">
-						<?php for($i=0;$i<20;$i++) :?>
-						<li>
-							<?=$this->Html->image('http://p.cdnanapi.com/r/2014/08/14/16/20140814164209_53ec685155cb0.jpg?quality=85&size=250')?>
-							<p>在庫を減らそう！在庫を残してはいけない理由</p>
-							<a href="http://nanapi.jp/business/5939" target="_blank">記事を見る</a>
+						<li ng-repeat="recipe in recipes">
+							<img src="{{recipe.image}}?quality=85&size=250">
+							<p>{{recipe.title}}</p>
+							<a href="http://nanapi.jp/{{recipe.recipe_id}}" target="_blank">nanapiで記事を確認</a>
 						</li>
-						<?php endfor?>
 					</ul>
 				</div>
 			</div>
@@ -61,6 +59,5 @@
 				</ul>
 			</div>
 		</div>
-		
 	</div>
 </div>

@@ -209,6 +209,7 @@ h1 {
 	cursor: pointer;
 	float: left;
 	width: 216px;
+	height: 60px;
 	padding: 8px;
 	margin: 0 10px 10px 0;
 	overflow: hidden;
@@ -229,11 +230,11 @@ h1 {
 }
 
 .select_article_list li a {
-	color: blue;
+	color: #3498db;
 }
 
 .select_article_list li p {
-	font-size: 13px;
+	font-size: 12px;
 	line-height: 1.1em;
 	color: #333;
 }
