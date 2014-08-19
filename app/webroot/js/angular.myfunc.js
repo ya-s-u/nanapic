@@ -7,14 +7,20 @@ var CreateCtrl = function($scope,$http) {
 	//nanpiAPIから指定キーワードで検索
 	$('#ArticleSearch').keypress(function (e) {
 		if (e.which == 13) {
-			var parameter = {
-				'key' : '4cb94f0895324',
-				'format' : 'json',
-				'query' : $scope.SearchText,
-				'is_image' : 1,
-	    	};
-		    	
-			$http({
+			getRecipe($scope.SearchText,1);
+		}
+	} );
+	
+	function getRecipe(query,page) {
+		var parameter = {
+			'key' : '4cb94f0895324',
+			'format' : 'json',
+			'query' : query,
+			'is_image' : 1,
+			'page' : page,
+    	};
+    	
+		$http({
 				method : 'GET',
 			    url : 'http://api.nanapi.jp/v1/recipeSearchDetails/',
 				params: parameter,
@@ -23,22 +29,8 @@ var CreateCtrl = function($scope,$http) {
 				$scope.recipes = data['response']['recipes'];
 			}).error(function(data, status, headers, config) {
 				console.log('error!');
-			});
-		}
-	} );
-	
-	/*$scope.GetRecipe = function(){
-		$http({
-			method : 'GET',
-		    url : 'http://api.nanapi.jp/v1/recipeSearchDetails/?key=4cb94f0895324&format=json&query=test',
-			headers: {
-	    	},
-		}).success(function(data, status, headers, config) {
-			$scope.recipes = data['response']['recipes'];
-		}).error(function(data, status, headers, config) {
-			console.log('error!');
 		});
-	};*/
+	}
 	
 }
 

@@ -17,9 +17,9 @@
 				<div class="select_article_head">
 					<input type="text" ng-model="SearchText" id="ArticleSearch" placeholder="エンターキーを押して検索">
 					<div class="page_manage">
-						<i class="">左</i>
+						<i class="">←</i>
 						<p class="page_num">{{status.current_page}}/{{status.page_count}}</p>
-						<i class="">右</i>
+						<i class="">→</i>
 					</div>
 					<p class="select_article_count">選択中の記事数: <span>3</span>/10</p>
 				</div>
