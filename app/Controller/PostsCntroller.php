@@ -1,15 +1,16 @@
 <?php
-class UsersController extends AppController {
-	public $name = 'Users';
+class PostsController extends AppController {
+	public $name = 'Posts';
 
 	public function beforeFilter() {
 		parent::beforeFilter();
 	}
 	
 	/**
-	* ダッシュボード
+	* 新着記事一覧
 	*/
 	public function index() {
+		$this->set('title_for_layout','ログアウト');
 	
 	}
 

@@ -4,6 +4,7 @@ class CuratorsController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
+		$this->Auth->allow(array('index'));
 	}
 
 	/**

@@ -5,6 +5,7 @@
 .container {
 	position: relative;
 	width: 1000px;
+	height: 100%;
 	margin: 0 auto;
 	overflow: hidden;
 }
@@ -27,14 +28,37 @@ h2 {
 }
 
 h1 {
+	display: inline;
+	position: absolute;
+	left: 400px;
+	top: 20px;
+	width: 200px;
+}
+
+.h1_sub {
 	float: left;
 	width: 200px;
-	margin: 20px 0 0 400px;
+	margin-top: 4px;
+}
+
+.global_menu {
+	float: left;
+	margin-top: 35px;
+}
+
+.global_menu li {
+	float: left;
+	margin-right: 20px;
+}
+
+.global_menu li a {
+	font-size: 14px;
+	color: #333;
 }
 
 .user_menu {
 	float: right;
-	margin: 35px 0 0 0;
+	margin-top: 35px;
 }
 
 .user_menu li {
@@ -43,6 +67,7 @@ h1 {
 }
 
 .user_menu li a {
+	font-size: 14px;
 	color: #333;
 }
 
