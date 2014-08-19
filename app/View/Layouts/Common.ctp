@@ -39,9 +39,6 @@
 		
 		</div>
 	</div>
-<script type="text/javascript">
-var APIKEY = 4cb94f0895324;
-</script>
 <?=$this->html->script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')?>
 <?=$this->html->script('//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js')?>
 <?=$this->html->script('jquery.sortable')?>

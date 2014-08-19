@@ -13,8 +13,8 @@ class CuratorsController extends AppController {
 	public function index() {
 		$this->set('title_for_layout','キュレーター一覧');
 
-		$user = $this->User->getUSer($this->Auth->user('id'));
-		$this->set('user',$user);
+		$Users = $this->User->getAllUser();
+		$this->set('Users',$Users);
 	}
 	 
 }
