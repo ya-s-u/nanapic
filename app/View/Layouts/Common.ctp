@@ -11,19 +11,29 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	
-	<link rel="shortcut icon" href="<?=$this->Html->webroot.'img/fav.ico'?>">
-	<link rel="apple-touch-icon-precomposed" href="<?=$this->Html->webroot.'img/fav.ico'?>" />
+	<link rel="shortcut icon" href="<?= $this->Html->webroot.'img/fav.ico' ?>">
+	<link rel="apple-touch-icon-precomposed" href="<?= $this->Html->webroot.'img/fav.ico' ?>" />
 	
-	<title><?php echo $title_for_layout?> - nanapic</title>
+	<title><?= $title_for_layout ?> - nanapic</title>
 		
-	<?php
-	echo $this->Html->css('common');
-	?>
+	<?= $this->Html->css('common') ?>
 </head>
 <body>
-<?php echo $this->fetch('content'); ?>
-<?php
-echo $this->html->script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js');
-?>
+	<div id="header">
+		<div class="container">
+			<h1><a href="//nanapi.trial.jp"><?= $this->Html->image('logo.png') ?></a></h1>
+			<ul class="user_menu">
+				<li><a href="/users" class="btn dashboard">マイページ</a></li>
+				<li><a href="/users/logout" class="btn logout">ログアウト</a></li>
+			</ul>
+		</div>
+	</div>
+	<?= $this->fetch('content') ?>
+	<div id="footer">
+		<div class="container">
+		
+		</div>
+	</div>
+<?= $this->html->script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js') ?>
 </body>
 </html>
