@@ -15,14 +15,11 @@ class PostsController extends AppController {
 	}
 
 	/**
-	* ログアウト
+	* 新規投稿
 	*/
-	public function logout() {
-		$this->set('title_for_layout','ログアウト');
+	public function create() {
+		$this->set('title_for_layout','新規投稿');
 
-		$this->Auth->logout();
-		$this->Cookie->delete('Auth');
-		$this->redirect('/');
 	}
 	 
 }

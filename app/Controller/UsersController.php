@@ -10,6 +10,7 @@ class UsersController extends AppController {
 	* ダッシュボード
 	*/
 	public function index() {
+		$this->set('title_for_layout','ダッシュボード');
 	
 	}
 
