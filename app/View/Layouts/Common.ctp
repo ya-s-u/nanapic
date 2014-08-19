@@ -27,10 +27,17 @@
 				<li><a href="/curators">キュレーター一覧</a></li>
 			</ul>
 			<h1><a href="//nanapi.trial.jp"><?=$this->Html->image('logo.png')?></a></h1>
+			<?php if($user) :?>
 			<ul class="user_menu">
 				<li><a href="/users" class="btn dashboard">マイページ</a></li>
 				<li><a href="/users/logout" class="btn logout">ログアウト</a></li>
 			</ul>
+			<?php else :?>
+			<ul class="user_menu">
+				<li><a href="/twitters/redirect1" class="btn logout">ログイン</a></li>
+				<li><a href="/twitters/redirect1" class="btn logout">ユーザー登録</a></li>
+			</ul>
+			<?php endif?>
 		</div>
 	</div>
 	<?=$this->fetch('content')?>

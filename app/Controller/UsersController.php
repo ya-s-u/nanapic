@@ -21,7 +21,6 @@ class UsersController extends AppController {
 		$this->set('title_for_layout','ログアウト');
 
 		$this->Auth->logout();
-		$this->Cookie->delete('Auth');
 		$this->redirect('/');
 	}
 	 
