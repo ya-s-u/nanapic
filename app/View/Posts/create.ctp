@@ -17,9 +17,9 @@
 				<div class="select_article_head">
 					<input type="text" ng-model="SearchText" id="ArticleSearch" placeholder="エンターキーを押して検索">
 					<div class="page_manage">
-						<i class="">←</i>
+						<i class="" ng-show="Status.has_prev" ng-click="changePage(SearchText,Status.current_page-1)">←</i>
 						<p class="page_num">{{Status.current_page}}/{{Status.page_count}}</p>
-						<i class="">→</i>
+						<i class="" ng-show="Status.has_next" ng-click="changePage(SearchText,Status.current_page+1)">→</i>
 					</div>
 					<p class="select_article_count">選択中の記事数: <span>{{CountSelectedRecipes}}</span>/10</p>
 				</div>
@@ -36,19 +36,13 @@
 			</div>
 			<div class="sort_article">
 				<p class="sort_article_title">ドラッグして並び替え</p>
+				<p ng-show="CountSelectedRecipes==0" class="sort_article_none">記事を追加してください
+				</p>
 				<ul class="sort_article_list">
 					<li ng-repeat="selectedrecipe in SelectedRecipes" draggable="true">
 						<img src="{{selectedrecipe.img_url}}?quality=85&size=250">
 						<p>{{selectedrecipe.title}}</p>
 						<i ng-click="removeRecipe(selectedrecipe.id)">×</i>
-					</li>
-					<li>
-						<?=$this->Html->image('http://p.cdnanapi.com/r/2014/08/14/16/20140814164209_53ec685155cb0.jpg?quality=85&size=250')?>
-						<p>デフォ1</p>
-					</li>
-					<li>
-						<?=$this->Html->image('http://p.cdnanapi.com/r/2014/08/14/16/20140814164209_53ec685155cb0.jpg?quality=85&size=250')?>
-						<p>デフォ2</p>
 					</li>
 				</ul>
 			</div>
@@ -71,6 +65,9 @@
 					<?php endfor?>
 				</ul>
 			</div>
+		</div>
+		<div class="edit_info">
+		
 		</div>
 	</div>
 </div>

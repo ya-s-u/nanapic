@@ -278,10 +278,17 @@ h1 {
 }
 
 .sort_article_title {
-	padding: 5px 10px;
+	padding: 9px 10px;
 	font-size: 14px;
 	color: #555;
 	border-bottom: 1px solid #eee;
+}
+
+.sort_article_none {
+	width: 100%;
+	font-size: 16px;
+	text-align: center;
+	padding: 210px 0;
 }
 
 .sort_article_list {
@@ -298,6 +305,7 @@ h1 {
 .sort_article_list img {
 	float: left;
 	width: 40px;
+	height: 24px;
 	margin-right: 5px;
 }
 
