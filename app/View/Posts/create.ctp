@@ -2,8 +2,8 @@
 	<div class="container">
 		<ul class="breadcrumb">
 			<li><a href="/">nanapicトップ</a></li>
-			<li><a href="/curators">管理ページ</a></li>
-			<li><a href="/curators/create">新規投稿</a></li>
+			<li><a href="/users">管理ページ</a></li>
+			<li><a href="/posts/create">新規投稿</a></li>
 		</ul>
 	</div>
 </div>

@@ -52,7 +52,7 @@ h1 {
 }
 
 .global_menu li a {
-	font-size: 14px;
+	font-size: 13px;
 	color: #333;
 }
 
@@ -82,7 +82,7 @@ h1 {
 }
 
 .user_menu li a {
-	font-size: 14px;
+	font-size: 13px;
 	color: #333;
 }
 
@@ -407,7 +407,7 @@ h1 {
 	padding: 15px 0;
 	text-align: center;
 	background: #e74c3c;
-	font-size: 14px;
+	font-size: 16px;
 	color: white;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -416,7 +416,9 @@ h1 {
 	-ms-border-radius: 5px;
 }
 
-
+.edit_submit:hover {
+	background: #95a5a6;
+}
 
 #PostTitle {
 	width: 500px;
