@@ -82,7 +82,7 @@
 			</div>
 		</div>
 		<div class="edit_foot">
-			<p class="edit_foot"></p>
+			<p class="edit_foot_sub">以上の内容に誤りがないか確認した上、投稿してください。</p>
 			<p ng-click="submit()" class="edit_submit">投稿する</p>
 		</div>
 	</div>
