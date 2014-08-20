@@ -1,7 +1,7 @@
 /*
  * キュレーション記事投稿ページ
  */
-var CreateCtrl = function($scope,$http) {
+var CreateCtrl = function($scope, $http) {
 	
 	//nanpiAPIから指定キーワードで検索
 	$('#ArticleSearch').keypress(function (e) {
@@ -33,8 +33,13 @@ var CreateCtrl = function($scope,$http) {
 	}
 	
 	//記事を追加
-	$scope.addRecipe = function(){
-		$scope.SelectedRecipe.push();
+	$scope.SelectedRecipes = {};
+	$scope.addRecipe = function(id, title, img_url) {
+		$scope.SelectedRecipes[id] = {
+			'id' : id,
+			'title' : title,
+			'img_url' : img_url,
+		};
 	}
 	
 	//記事並び替えプラグイン

@@ -25,7 +25,7 @@
 				</div>
 				<div class="select_article_body">
 					<ul class="select_article_list">
-						<li ng-repeat="recipe in Recipes">
+						<li ng-repeat="recipe in Recipes"  ng-click="addRecipe(recipe.recipe_id,recipe.title,'http://')">
 							<img src="{{recipe.image}}?quality=85&size=250">
 							<p>{{recipe.title}}</p>
 							<a href="http://nanapi.jp/{{recipe.recipe_id}}" target="_blank">nanapiで記事を確認</a>
@@ -36,12 +36,10 @@
 			<div class="sort_article">
 				<p class="sort_article_title">ドラッグして並び替え</p>
 				<ul class="sort_article_list">
-					<?php for($i=0;$i<10;$i++) :?>
-					<li>
+					<li ng-repeat="selectedrecipe in SelectedRecipes">
 						<?=$this->Html->image('http://p.cdnanapi.com/r/2014/08/14/16/20140814164209_53ec685155cb0.jpg?quality=85&size=250')?>
-						<p>1時間後のピンポイント予報も！気象庁公式天気予報システム</p>
+						<p>{{selectedrecipe.title}}</p>
 					</li>
-					<?php endfor?>
 				</ul>
 			</div>
 		</div>
