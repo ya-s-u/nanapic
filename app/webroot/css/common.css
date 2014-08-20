@@ -227,6 +227,13 @@ h1 {
 	overflow-y: scroll;
 }
 
+.select_article_none {
+	width: 100%;
+	font-size: 16px;
+	text-align: center;
+	padding: 210px 0;
+}
+
 .select_article_list li {
 	cursor: pointer;
 	float: left;
@@ -282,6 +289,7 @@ h1 {
 }
 
 .sort_article_list li {
+	position: relative;
 	padding: 5px;
 	overflow: hidden;
 	border-bottom: 1px solid #eee;
@@ -297,6 +305,17 @@ h1 {
 	font-size: 14px;
 	line-height: 1.1em;
 	color: #333;
+}
+
+.sort_article_list i {
+	display: none;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+.sort_article_list li:hover > i {
+	display: inline;
 }
 
 .edit_info {
@@ -342,15 +361,15 @@ h1 {
 
 #PostTitle {
 	width: 500px;
-	padding: 10px;
+	padding: 7px 10px;
 	border: 1px solid #eee;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 #PostComment {
 	width: 500px;
 	height: 100px;
-	padding: 10px;
+	padding: 7px 10px;
 	border: 1px solid #eee;
-	font-size: 16px;
+	font-size: 14px;
 }

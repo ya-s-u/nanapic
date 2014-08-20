@@ -6,7 +6,9 @@ var CreateCtrl = function($scope, $http) {
 	//nanpiAPIから指定キーワードで検索
 	$('#ArticleSearch').keypress(function (e) {
 		if (e.which == 13) {
-			getRecipe($scope.SearchText,1);
+			if($scope.SearchText) {
+				getRecipe($scope.SearchText,1);
+			}
 		}
 	} );
 	
@@ -34,12 +36,20 @@ var CreateCtrl = function($scope, $http) {
 	
 	//記事を追加
 	$scope.SelectedRecipes = {};
+	$scope.CountSelectedRecipes = 0;
 	$scope.addRecipe = function(id, title, img_url) {
 		$scope.SelectedRecipes[id] = {
 			'id' : id,
 			'title' : title,
 			'img_url' : img_url,
 		};
+		$scope.CountSelectedRecipes++;
+	}
+	
+	//記事を削除
+	$scope.removeRecipe = function(id) {
+		delete $scope.SelectedRecipes[id];
+		$scope.CountSelectedRecipes--;
 	}
 	
 	//記事並び替えプラグイン
