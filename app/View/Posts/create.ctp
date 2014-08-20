@@ -18,14 +18,14 @@
 					<input type="text" ng-model="SearchText" id="ArticleSearch" placeholder="エンターキーを押して検索">
 					<div class="page_manage">
 						<i class="">←</i>
-						<p class="page_num">{{status.current_page}}/{{status.page_count}}</p>
+						<p class="page_num">{{Status.current_page}}/{{Status.page_count}}</p>
 						<i class="">→</i>
 					</div>
 					<p class="select_article_count">選択中の記事数: <span>3</span>/10</p>
 				</div>
 				<div class="select_article_body">
 					<ul class="select_article_list">
-						<li ng-repeat="recipe in recipes">
+						<li ng-repeat="recipe in Recipes">
 							<img src="{{recipe.image}}?quality=85&size=250">
 							<p>{{recipe.title}}</p>
 							<a href="http://nanapi.jp/{{recipe.recipe_id}}" target="_blank">nanapiで記事を確認</a>

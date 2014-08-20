@@ -1,7 +1,6 @@
-$(document).ready(function(){
-    $('.sort_article_list').sortable();
-});
-
+/*
+ * キュレーション記事投稿ページ
+ */
 var CreateCtrl = function($scope,$http) {
 	
 	//nanpiAPIから指定キーワードで検索
@@ -11,8 +10,7 @@ var CreateCtrl = function($scope,$http) {
 		}
 	} );
 	
-	
-	
+	//検索クエリとページ数を指定してnanapiAPIを叩き、viewを更新
 	function getRecipe(query,page) {
 		var parameter = {
 			'key' : '4cb94f0895324',
@@ -27,12 +25,20 @@ var CreateCtrl = function($scope,$http) {
 			    url : 'http://api.nanapi.jp/v1/recipeSearchDetails/',
 				params: parameter,
 			}).success(function(data, status, headers, config) {
-				$scope.status = data['response']['status'];
-				$scope.recipes = data['response']['recipes'];
+				$scope.Status = data['response']['status'];
+				$scope.Recipes = data['response']['recipes'];
 			}).error(function(data, status, headers, config) {
 				console.log('error!');
 		});
 	}
+	
+	//記事を追加
+	$scope.addRecipe = function(){
+		$scope.SelectedRecipe.push();
+	}
+	
+	//記事並び替えプラグイン
+    $('.sort_article_list').sortable();
 	
 }
 

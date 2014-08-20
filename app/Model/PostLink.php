@@ -1,6 +1,4 @@
 <?php
-App::uses('AuthComponent', 'Controller/Component');
-
 class PostLink extends AppModel {
 	public $name = 'PostLink';
 	

@@ -27,13 +27,11 @@ class TwittersController extends AppController {
 		$this->Session->write('oauth_token_secret', $request_token['oauth_token_secret']);
 
 		//エラー処理
-		switch ($connection->http_code) {
-			case 200:
-				$url = $connection->getAuthorizeURL($request_token['oauth_token']);
-				header('Location: ' . $url);
-				break;
-			default:
-				echo 'Could not connect to Twitter. Refresh the page or try again later.';
+		if ($connection->http_code) {
+			$url = $connection->getAuthorizeURL($request_token['oauth_token']);
+			header('Location: ' . $url);
+		} else {
+			$this->redirect('/');
 		}
 	}
 
@@ -55,12 +53,10 @@ class TwittersController extends AppController {
 		$access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
 
 		//未登録ユーザーなら新規登録
-		if(!$this->User->checkTwitterUserId($access_token['user_id'])) {
-			$this->User->newUser($access_token);
-			$NewUser = 1;
-		} else {
-			$NewUser = 0;
+		if(!$this->User->getUserByTwitterId($access_token['user_id'])) {
+			$this->User->createUser($access_token);
 		}
+		
 		//ログイン
 		$this->request->data['User'] = array(
             'twitter_oauth_token' => $access_token['oauth_token'],
