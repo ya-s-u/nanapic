@@ -297,6 +297,7 @@ h1 {
 
 .sort_article_list li {
 	position: relative;
+	height: 31px;
 	padding: 5px;
 	overflow: hidden;
 	border-bottom: 1px solid #eee;
@@ -353,17 +354,51 @@ h1 {
 	-ms-border-radius: 5px;
 }
 
+.edit_thumb_none {
+	width: 100%;
+	font-size: 16px;
+	text-align: center;
+	padding: 100px 0;
+}
+
 .edit_thumb_list {
 	overflow: hidden;
 }
 
-.edit_thumb_list li {
+.edit_thumb_list li img {
 	float: left;
-	width: 92px;
-	height: 74px;
+	width: 84px;
+	height: 62px;
 	margin: 0 5px 5px 0;
+	overflow: hidden;
+	border: 4px solid transparent;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
 }
 
+.edit_thumb_list li img.selected {
+	border: 4px solid #3498db;
+}
+
+.edit_foot {
+	float: left;
+	overflow: hidden;
+}
+
+.edit_submit {
+	cursor: pointer;
+	padding: 15px 50px;
+	background: #e74c3c;
+	color: white;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+}
 
 
 

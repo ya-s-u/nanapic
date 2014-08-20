@@ -3,6 +3,9 @@
  */
 var CreateCtrl = function ($scope, $http) {
 
+	//develop
+	getRecipe('恋愛',1);
+
     //nanpiAPIから指定キーワードで検索
     $('#ArticleSearch').keypress(function (e) {
         if (e.which == 13) {
@@ -52,6 +55,9 @@ var CreateCtrl = function ($scope, $http) {
 	            };
 	            $scope.CountSelectedRecipes++;
 	            $('.sort_article_list').sortable("refresh");
+	            if(!$scope.thumb) {
+	            	$scope.thumb = id;
+	            }
 			}
         }
     }
@@ -65,6 +71,23 @@ var CreateCtrl = function ($scope, $http) {
 
     //記事並び替えプラグイン
     $('.sort_article_list').sortable();
+    
+    //サムネイル選択
+    $scope.selectThumb = function (id) {
+    	$scope.thumb = id;
+    }
+    
+    //送信
+    $scope.submit = function () {
+        var recipe_id = 0;
+    	for(var i=0; i<10; i++) {
+    		recipe_id = $('.sort_article_list li').eq(i).val();
+			$(':hidden[name="data[Post][recipe'+i+']"]').val(recipe_id);
+			console.log(recipe_id);
+        }
+        
+        $(':hidden[name="data[Post][thumb]"]').val($scope.thumb);
+    }
 
 }
 

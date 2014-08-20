@@ -21,6 +21,7 @@ class PostsController extends AppController {
     public function create() {
         $this->set('title_for_layout', '新規投稿');
 
+
     }
 
 }
