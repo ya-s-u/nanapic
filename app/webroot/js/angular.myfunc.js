@@ -3,7 +3,7 @@
  */
 var CreateCtrl = function ($scope, $http) {
 
-	//develop
+	//TODO: デバッグ用の初期表示指定
 	getRecipe('恋愛',1);
 
     //nanpiAPIから指定キーワードで検索
