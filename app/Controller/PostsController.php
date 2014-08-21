@@ -29,6 +29,8 @@ class PostsController extends AppController {
         $this->set('post', $post);
         
         $this->set('title_for_layout', $post['Post']['title']);
+        
+        $this->Post->incrementCount($id);
     }
 
     /**

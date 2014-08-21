@@ -85,5 +85,20 @@ class Post extends AppModel {
 		);
 		return;
 	}
+	
+	/**
+	* PVカウントインクリメント
+	*/
+	public function incrementCount($id) {
+		$this->id = $id;
+		$increment = array(  
+    		'Post' => array(  
+        		'id' => $id,  
+        		'pv_count' => $this->field('pv_count') + 1,  
+        	) 
+		);
+		$this->id = $id;
+		return $this->save($increment, false, array('pv_count'));
+	}
 
 }
