@@ -14,6 +14,42 @@ class Post extends AppModel {
 	);
 	
 	/**
+	* ランダム取得(3つ)
+	*/
+	public function getRandomPost() {
+		$params = array(
+			'order' => 'rand()',
+			'limit' => 3,
+			'recursive' => -1,
+		);
+		return $this->find('all', $params);
+	}
+	
+	/**
+	* 新着順取得
+	*/
+	public function getAllPost() {
+		$params = array(
+			'order' => 'Post.id asc',
+			'limit' => 20,
+			'recursive' => -1,
+		);
+		return $this->find('all', $params);
+	}
+	
+	/**
+	* 指定記事取得
+	*/
+	public function getPost($id) {
+		$params = array(
+			'conditions' => array(
+				'Post.id' => $id,
+			),
+		);
+		return $this->find('first', $params);
+	}
+	
+	/**
 	* 記事投稿
 	*/
 	public function createPost($id, $request) {
@@ -43,4 +79,3 @@ class Post extends AppModel {
 	}
 
 }
-?>

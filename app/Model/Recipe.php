@@ -3,12 +3,12 @@ class Recipe extends AppModel {
 	public $name = 'Recipe';
 	//public $recursive = -1;
 	
-	/*public $belongsTo = array(
+	public $belongsTo = array(
         'User' => array(
             'className' => 'Post',
             'foreignKey' => 'post_id',
         ),
-    );*/
+    );
 
 	public $validate = array(
 	);
@@ -30,4 +30,3 @@ class Recipe extends AppModel {
 	}
 
 }
-?>

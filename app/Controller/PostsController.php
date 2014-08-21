@@ -12,8 +12,13 @@ class PostsController extends AppController {
      * 新着記事一覧
      */
     public function index() {
-        $this->set('title_for_layout', 'ログアウト');
-
+        $this->set('title_for_layout', '新着記事一覧');
+		
+		$RandomPosts = $this->Post->getRandomPost();
+        $this->set('RandomPosts', $RandomPosts);
+		
+		$NewPosts = $this->Post->getAllPost();
+        $this->set('NewPosts', $NewPosts);
     }
 
     /**
