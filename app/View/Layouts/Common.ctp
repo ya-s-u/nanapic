@@ -27,9 +27,9 @@
 				<li><a href="/curators">キュレーター一覧</a></li>
 			</ul>
 			<h1><a href="//nanapi.trial.jp"><?=$this->Html->image('logo.png')?></a></h1>
-			<?php if($user) :?>
+			<?php if($auth) :?>
 			<ul class="user_menu">
-				<li><a href="/users" class="btn dashboard"><?=$this->Html->image($user['User']['twitter_profile_img_url'])?>マイページ</a></li>
+				<li><a href="/users" class="btn dashboard"><?=$this->Html->image($auth['User']['twitter_profile_img_url'])?>マイページ</a></li>
 				<li><a href="/users/logout" class="btn logout">ログアウト</a></li>
 			</ul>
 			<?php else :?>

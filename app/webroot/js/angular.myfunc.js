@@ -83,10 +83,11 @@ var CreateCtrl = function ($scope, $http) {
     	for(var i=0; i<10; i++) {
     		recipe_id = $('.sort_article_list li').eq(i).val();
 			$(':hidden[name="data[Post][recipe'+i+']"]').val(recipe_id);
-			console.log(recipe_id);
         }
         
         $(':hidden[name="data[Post][thumb]"]').val($scope.thumb);
+        
+        $('#PostCreateForm').submit();
     }
 
 }

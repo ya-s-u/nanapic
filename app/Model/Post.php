@@ -1,6 +1,7 @@
 <?php
 class Post extends AppModel {
 	public $name = 'Post';
+	public $recursive = -1;
 
 	public $belongsTo = array(
         'User' => array(
@@ -15,17 +16,14 @@ class Post extends AppModel {
 	/**
 	* 記事投稿
 	*/
-	public function createPost($Data) {
-		$this->set($Data);
-		$this->validates();
+	public function createPost($id, $request, $img_url) {
 		$this->create();
 		$this->data = array(
-			'twitter_user_id' => $Data['user_id'],
-			'twitter_screen_name' => $Data['screen_name'],
-			'twitter_oauth_token' => $Data['oauth_token'],
-			'twitter_oauth_token_secret' => $Data['oauth_token_secret'],
+			'user_id' => $id,
+        	'title' => $request['title'],
+        	'comment' => $request['comment'],
+       		'thumb_img_url' => $img_url,
 			'created' => date("Y-m-d G:i:s"),
-			'modified' => date('Y-m-d H:i:s'),
 		);
 		return $this->save($this->data);
 	}
