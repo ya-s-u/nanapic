@@ -30,6 +30,9 @@ class PostsController extends AppController {
         
         $this->set('title_for_layout', $post['Post']['title']);
         
+		$PopularPosts = $this->Post->getPopularPosts();
+        $this->set('PopularPosts', $PopularPosts);
+        
         $this->Post->incrementPv($id);
     }
 

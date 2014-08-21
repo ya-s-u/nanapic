@@ -37,7 +37,7 @@ class Post extends AppModel {
 	*/
 	public function getAllPosts() {
 		$params = array(
-			'order' => 'Post.id asc',
+			'order' => 'Post.id desc',
 			'limit' => 20,
 			'recursive' => -1,
 		);
@@ -55,6 +55,18 @@ class Post extends AppModel {
 			'recursive' => 1,
 		);
 		return $this->find('first', $params);
+	}
+	
+	/**
+	* ランキング取得(5つ)
+	*/
+	public function getPopularPosts() {
+		$params = array(
+			'order' => 'Post.pv_count desc',
+			'limit' => 5,
+			'recursive' => -1,
+		);
+		return $this->find('all', $params);
 	}
 	
 	/**

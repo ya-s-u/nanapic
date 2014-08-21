@@ -33,6 +33,17 @@
 				<h4 class="view_auther_name"><?= h($post['User']['twitter_user_name']) ?></h4>
 				<p class="view_auther_description"><?= h($post['User']['twitter_description']) ?></p>
 			</div>
+			<div class="ranking">
+				<h2 class="ranking_title">人気のまとめ</h2>
+				<ul class="ranking_list">
+					<?php foreach($PopularPosts as $post) :?>
+					<li>
+						<h3 class="ranking_list_title"><?= $i+1 ?>. <?= h($post['Post']['title']) ?></h3>
+						<img class="ranking_list_thumb" src="<?= h($post['Post']['thumb_img_url']) ?>">
+					</li>
+					<?php endforeach?>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>
