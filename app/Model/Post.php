@@ -16,16 +16,30 @@ class Post extends AppModel {
 	/**
 	* 記事投稿
 	*/
-	public function createPost($id, $request, $img_url) {
+	public function createPost($id, $request) {
 		$this->create();
 		$this->data = array(
 			'user_id' => $id,
         	'title' => $request['title'],
         	'comment' => $request['comment'],
-       		'thumb_img_url' => $img_url,
 			'created' => date("Y-m-d G:i:s"),
 		);
 		return $this->save($this->data);
+	}
+	
+	/**
+	* サムネイル画像更新
+	*/
+	public function updateThumb($id, $img_url) {
+		$this->updateAll(
+			array(
+				'Post.thumb_img_url' => "'".$img_url."'",
+			),
+			array(
+				'Post.id' => $id,
+			)
+		);
+		return;
 	}
 
 }

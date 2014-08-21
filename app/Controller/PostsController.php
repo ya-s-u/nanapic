@@ -24,13 +24,8 @@ class PostsController extends AppController {
         
         if ($this->request->isPost()) {
         
-        	//サムネイルURLを取るためnanapiAPIにアクセス
-        	$recipe_id = $this->request->data['Post']['thumb'];
-	        $data = file_get_contents('http://api.nanapi.jp/v1/recipeLookupDetails/?recipe_id='.$recipe_id.'&key=4cb94f0895324&format=json');
-			$data = json_decode($data, true);
-        
         	//記事情報をdbに保存
-        	$this->Post->createPost($this->Auth->user('id'),$this->request->data['Post'], $data['response']['recipe']['image']);
+        	$this->Post->createPost($this->Auth->user('id'), $this->request->data['Post']);
         	
         	//記事ID取得
         	$post_id = (int) $this->Post->getLastInsertID();
@@ -48,6 +43,11 @@ class PostsController extends AppController {
 				
 				//post_linkに保存
 				$this->Recipe->createRecipe($post_id, $i, $data['response']['recipe']);
+				
+				//サムネイルに使う画像だったらpostに保存
+				if($recipe_id == $this->request->data['Post']['thumb']) {
+					$this->Post->updateThumb($post_id, $data['response']['recipe']['image']);
+				}
 	        }
 			
 			//リダイレクト
