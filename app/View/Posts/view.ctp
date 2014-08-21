@@ -6,14 +6,17 @@
 		</ul>
 	</div>
 </div>
-<div class="main" ng-controller="CreateCtrl">
+<div class="view_head">
+	<div class="container">
+		<img class="view_head_thumb" src="<?= h($post['Post']['thumb_img_url']) ?>?mode=trim&width=100&height=100">
+		<h2 class="view_head_title"><a href="/view/<?= h($post['Post']['id']) ?>"><?= h($post['Post']['title']) ?></a></h2>
+		<p class="view_head_comment"><?= h($post['Post']['comment']) ?></p>
+		<p class="view_head_pv"><?= h($post['Post']['pv_count'])*30 ?><span>view</span></p>
+	</div>
+</div>
+<div class="main">
 	<div class="container">
 		<div class="view_left">
-			<div class="view_head">
-				<img class="view_head_thumb" src="<?= h($post['Post']['thumb_img_url']) ?>?mode=trim&width=100&height=100">
-				<h2 class="view_head_title"><?= h($post['Post']['title']) ?></h2>
-				<p class="view_head_comment"><?= h($post['Post']['comment']) ?></p>
-			</div>
 			<ul class="view_recipe">
 				<?php foreach($post['Recipe'] as $i => $recipe) :?>
 				<li>

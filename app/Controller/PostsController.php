@@ -30,7 +30,7 @@ class PostsController extends AppController {
         
         $this->set('title_for_layout', $post['Post']['title']);
         
-        $this->Post->incrementCount($id);
+        $this->Post->incrementPv($id);
     }
 
     /**

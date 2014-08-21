@@ -89,7 +89,7 @@ class Post extends AppModel {
 	/**
 	* PVカウントインクリメント
 	*/
-	public function incrementCount($id) {
+	public function incrementPv($id) {
 		$this->id = $id;
 		$increment = array(  
     		'Post' => array(  
@@ -97,7 +97,6 @@ class Post extends AppModel {
         		'pv_count' => $this->field('pv_count') + 1,  
         	) 
 		);
-		$this->id = $id;
 		return $this->save($increment, false, array('pv_count'));
 	}
 
