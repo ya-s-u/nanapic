@@ -392,6 +392,46 @@ h1 {
 	margin-left: 70px;
 }
 
+.ranking_title {
+	font-size: 18px;
+	font-weight: normal;
+	padding: 10px;
+}
+
+.ranking_list li {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.ranking_list_rank {
+	position: absolute;
+	left: 5px;
+	top: -5px;
+	font-size: 14px;
+	color: white;
+	padding: 5px 9px;
+	background: #fc7c79;
+	border: 3px solid white;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+}
+
+.ranking_list_thumb {
+	margin-left: 10px;
+}
+
+.ranking_list_title {
+	margin: 0 0 5px 10px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.4em;
+	color: #333;
+}
+
+
 
 
 /* Posts Create */

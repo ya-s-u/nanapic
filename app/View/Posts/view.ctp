@@ -36,10 +36,13 @@
 			<div class="ranking">
 				<h2 class="ranking_title">人気のまとめ</h2>
 				<ul class="ranking_list">
-					<?php foreach($PopularPosts as $post) :?>
+					<?php $i=1;foreach($PopularPosts as $post) :?>
 					<li>
-						<h3 class="ranking_list_title"><?= $i+1 ?>. <?= h($post['Post']['title']) ?></h3>
-						<img class="ranking_list_thumb" src="<?= h($post['Post']['thumb_img_url']) ?>">
+						<a href="/view/<?= h($post['Post']['id']) ?>">
+							<span class="ranking_list_rank"><?= $i++ ?></span>
+							<img class="ranking_list_thumb" src="<?= h($post['Post']['thumb_img_url']) ?>?mode=trim&width=275&height=100">
+							<h3 class="ranking_list_title"><?= h($post['Post']['title']) ?></h3>
+						</a>
 					</li>
 					<?php endforeach?>
 				</ul>
