@@ -68,7 +68,7 @@ class PostsController extends AppController {
 	        }
 			
 			//リダイレクト
-			$this->redirect(array('controller'=>'users','action'=>'index'));
+			$this->redirect('/');
 		}
     }
 

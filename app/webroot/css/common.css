@@ -136,10 +136,6 @@ h1 {
 	margin-right: 0;
 }
 
-.curators li:hover {
-	background: #eee;
-}
-
 .curators .thumb {
 	float: left;
 	width: 50px;

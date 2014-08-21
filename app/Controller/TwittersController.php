@@ -66,7 +66,7 @@ class TwittersController extends AppController {
             //プロフィールを更新
             $this->getProfile($id);
 
-            $this->redirect(array('controller' => 'users', 'action' => 'index'));
+            $this->redirect('/');
         } else {
             echo '作成失敗';
         }
