@@ -175,7 +175,6 @@ h1 {
 }
 
 .random_posts_thumb {
-	height: 200px;
 	overflow: hidden;
 }
 
@@ -225,7 +224,6 @@ h1 {
 .new_posts_thumb {
 	float: left;
 	width: 150px;
-	height: 150px;
 	margin-right: 20px;
 	overflow: hidden;
 }
@@ -263,6 +261,106 @@ h1 {
 	border-bottom: 1px solid #eee;
 }
 
+/* Posts View */
+.view_left {
+	float: left;
+	width: 699px;
+	margin-right: 15px;
+	padding-right: 15px;
+	border-right: 1px solid #eee;
+}
+
+.view_head {
+	overflow: hidden;
+	padding: 20px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.view_head_thumb {
+	float: left;
+	width: 100px;
+	margin-right: 10px;
+}
+
+.view_head_title {
+	margin: 5px 0;
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 1.4em;
+}
+
+.view_head_comment {
+	margin-left: 110px;
+	font-size: 14px;
+	word-wrap: break-word;
+}
+
+.view_recipe {
+	margin-top: 40px;
+}
+
+.view_recipe li {
+	margin-bottom: 40px; 
+}
+
+.view_recipe_title {
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 1.2em;
+	padding-bottom: 5px;
+	border-bottom: 3px solid #fc7c79;
+}
+
+.view_recipe_image {
+	display: block;
+	width: auto;
+	height: 320px;
+	margin: 20px 0;
+}
+
+.view_recipe_description {
+	position: relative;
+	background: #eee;
+	padding: 1em 1em 1em 3em;
+	font-size: 15px;
+	color: #555;
+}
+
+.view_recipe_description:before {
+	content: "“";
+	font-size: 600%;
+	line-height: 1em;
+	font-family: "ＭＳ Ｐゴシック",sans-serif;
+	color: #999;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+}
+
+
+
+.view_right {
+	float: left;
+	width: 270px;
+}
+
+.view_auther {
+	padding: 20px 0;
+}
+
+.view_auther_thumb {
+	float: left;
+	width: 70px;
+	margin-right: 10px;
+}
+
+.view_auther_name {
+	font-size: 16px;
+}
+
+.view_auther_description {
+	margin-left: 80px;
+}
 
 
 

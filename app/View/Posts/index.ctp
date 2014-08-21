@@ -3,9 +3,11 @@
 		<ul class="random_posts">
 			<?php foreach($RandomPosts as $post) :?>
 			<li>
-				<div class="random_posts_thumb"><img src="<?=$post['Post']['thumb_img_url']?>"></div>
-				<h3 class="random_posts_title"><?=$post['Post']['title']?></h3>
-				<p class="random_posts_comment"><?=$post['Post']['comment']?></p>
+				<a href="/view/<?=$post['Post']['id']?>">
+					<img class="random_posts_thumb" src="<?=$post['Post']['thumb_img_url']?>?mode=trim&width=316&height=200">
+					<h3 class="random_posts_title"><?=$post['Post']['title']?></h3>
+					<p class="random_posts_comment"><?=$post['Post']['comment']?></p>
+				</a>
 			</li>
 			<?php endforeach?>
 		</ul>
@@ -18,9 +20,11 @@
 			<ul class="new_posts">
 				<?php foreach($NewPosts as $post) :?>
 				<li>
-					<div class="new_posts_thumb"><img height="150" src="<?=$post['Post']['thumb_img_url']?>"></div>
-					<h3 class="new_posts_title"><?=$post['Post']['title']?></h3>
-					<p class="new_posts_comment"><?=$post['Post']['comment']?></p>
+					<a href="/view/<?=$post['Post']['id']?>">
+						<img class="new_posts_thumb" src="<?=$post['Post']['thumb_img_url']?>?mode=trim&width=150&height=150">
+						<h3 class="new_posts_title"><?=$post['Post']['title']?></h3>
+						<p class="new_posts_comment"><?=$post['Post']['comment']?></p>
+					</a>
 				</li>
 				<?php endforeach?>
 			</ul>

@@ -9,6 +9,13 @@ class Post extends AppModel {
             'foreignKey' => 'user_id',
         ),
     );
+    
+    public $hasMany = array(
+        'Recipe' => array(
+            'className' => 'Recipe',
+            'foreignKey' => 'post_id',
+        ),
+    );
 
 	public $validate = array(
 	);
@@ -16,7 +23,7 @@ class Post extends AppModel {
 	/**
 	* ランダム取得(3つ)
 	*/
-	public function getRandomPost() {
+	public function getRandomPosts() {
 		$params = array(
 			'order' => 'rand()',
 			'limit' => 3,
@@ -28,7 +35,7 @@ class Post extends AppModel {
 	/**
 	* 新着順取得
 	*/
-	public function getAllPost() {
+	public function getAllPosts() {
 		$params = array(
 			'order' => 'Post.id asc',
 			'limit' => 20,
@@ -45,6 +52,7 @@ class Post extends AppModel {
 			'conditions' => array(
 				'Post.id' => $id,
 			),
+			'recursive' => 1,
 		);
 		return $this->find('first', $params);
 	}
@@ -56,8 +64,8 @@ class Post extends AppModel {
 		$this->create();
 		$this->data = array(
 			'user_id' => $id,
-        	'title' => $request['title'],
-        	'comment' => $request['comment'],
+			'title' => $request['title'],
+			'comment' => $request['comment'],
 			'created' => date("Y-m-d G:i:s"),
 		);
 		return $this->save($this->data);

@@ -5,7 +5,7 @@ class PostsController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow(array('index'));
+        $this->Auth->allow(array('index','view'));
     }
 
     /**
@@ -14,11 +14,21 @@ class PostsController extends AppController {
     public function index() {
         $this->set('title_for_layout', '新着記事一覧');
 		
-		$RandomPosts = $this->Post->getRandomPost();
+		$RandomPosts = $this->Post->getRandomPosts();
         $this->set('RandomPosts', $RandomPosts);
 		
-		$NewPosts = $this->Post->getAllPost();
+		$NewPosts = $this->Post->getAllPosts();
         $this->set('NewPosts', $NewPosts);
+    }
+
+	/**
+     * 記事ビュー
+     */
+    public function view($id) {
+		$post = $this->Post->getPost($id);
+        $this->set('post', $post);
+        
+        $this->set('title_for_layout', $post['Post']['title']);
     }
 
     /**
