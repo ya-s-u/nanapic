@@ -33,6 +33,9 @@
 			</ul>
 		</div>
 		<div class="top_right">
+			<a class="nekomap" href="//nekomap.com" target="_blank">
+				<?= $this->Html->image('nekomap.jpg')?>
+			</a>
 			<div class="ranking">
 				<h2 class="ranking_title">人気のまとめ</h2>
 				<ul class="ranking_list">
