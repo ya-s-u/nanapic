@@ -12,7 +12,7 @@
 		<h2 class="view_head_title"><a href="/view/<?= h($post['Post']['id']) ?>"><?= h($post['Post']['title']) ?></a></h2>
 		<p class="view_head_comment"><?= h($post['Post']['comment']) ?></p>
 		<p class="view_head_created"><i class="icon-clock"></i><?= date('Y年m月d日 G:i', strtotime($post['Post']['created'])) ?></p>
-		<p class="view_head_pv"><?= h($post['Post']['pv_count'])*30 ?><span>view</span></p>
+		<p class="view_head_pv"><?= h($post['Post']['pv_count'])*27 ?><span>view</span></p>
 	</div>
 </div>
 <div class="main">

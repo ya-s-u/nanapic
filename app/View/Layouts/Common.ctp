@@ -21,13 +21,12 @@
 <body>
 	<div id="header">
 		<div class="container">
-			<!-- <p class="h1_sub">nanapiの良質記事をピックアップ！</p> -->
 			<ul class="global_menu">
 				<li><a href="/">新着まとめ</a></li>
 				<li><a href="/curators">キュレーター一覧</a></li>
 			</ul>
 			<h1><a href="//nanapi.trial.jp"><?=$this->Html->image('logo.png')?></a></h1>
-			<?php if($auth) :?>
+			<?php if(isset($auth)) :?>
 			<ul class="user_menu">
 				<li><a href="/posts/create"><?=$this->Html->image($auth['User']['twitter_profile_img_url'])?>まとめをつくる</a></li>
 				<li><a href="/users/logout">ログアウト</a></li>
