@@ -11,6 +11,7 @@
 		<img class="view_head_thumb" src="<?= h($post['Post']['thumb_img_url']) ?>?mode=trim&width=100&height=100">
 		<h2 class="view_head_title"><a href="/view/<?= h($post['Post']['id']) ?>"><?= h($post['Post']['title']) ?></a></h2>
 		<p class="view_head_comment"><?= h($post['Post']['comment']) ?></p>
+		<p class="view_head_created"><i class="icon-clock"></i><?= date('Y年m月d日 G:i', strtotime($post['Post']['created'])) ?></p>
 		<p class="view_head_pv"><?= h($post['Post']['pv_count'])*30 ?><span>view</span></p>
 	</div>
 </div>
@@ -20,9 +21,11 @@
 			<ul class="view_recipe">
 				<?php foreach($post['Recipe'] as $i => $recipe) :?>
 				<li>
-					<h3 class="view_recipe_title"><?= $i+1 ?>. <?= h($recipe['title']) ?></h3>
-					<img class="view_recipe_image" src="<?= h($recipe['thumb_img_url']) ?>">
-					<p class="view_recipe_description"><?= h($recipe['description']) ?></p>
+					<a href="//nanapi.jp/<?= h($recipe['nanapi_article_id']) ?>" target="_blank">
+						<h3 class="view_recipe_title"><?= $i+1 ?>. <?= h($recipe['title']) ?></h3>
+						<img class="view_recipe_image" src="<?= h($recipe['thumb_img_url']) ?>">
+						<p class="view_recipe_description"><?= h($recipe['description']) ?></p>
+					</a>
 				</li>
 				<?php endforeach?>
 			</ul>
@@ -31,6 +34,7 @@
 			<div class="view_auther">
 				<img class="view_auther_thumb" src="<?= h($post['User']['twitter_profile_img_url']) ?>">
 				<h4 class="view_auther_name"><?= h($post['User']['twitter_user_name']) ?></h4>
+				<p class="view_auther_twitter"><a href="https://twitter.com/<?= h($post['User']['twitter_screen_name']) ?>" target="_blank"><i class="icon-twitter"></i><?= h($post['User']['twitter_screen_name']) ?></a></p>
 				<p class="view_auther_description"><?= h($post['User']['twitter_description']) ?></p>
 			</div>
 			<div class="ranking">

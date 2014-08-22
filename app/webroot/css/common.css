@@ -1,6 +1,45 @@
 /* Reset -Minified */
 *{margin:0;padding:0;border:0;}html{width:100%;overflow-x:hidden;font-family:"メイリオ","Meiryo,Verdana,Arial","ヒラギノ丸ゴ ProN W4","Lucida Grande","segoe UI",'Meiryo UI',"sans-serif";}body{width:100%;overflow-x:hidden;margin:0;padding:0;position:relative;}li{list-style:none;font-size:14px;color:#555;}a{text-decoration:none;font-size:12px;color:#999;}p{font-size:12px;color:#999;}img{width:100%;}
 
+/* Icon */
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?8ni7au');
+	src:url('../fonts/icomoon.eot?#iefix8ni7au') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?8ni7au') format('woff'),
+		url('../fonts/icomoon.ttf?8ni7au') format('truetype'),
+		url('../fonts/icomoon.svg?8ni7au#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-clock:before {
+	content: "\e600";
+}
+.icon-twitter:before {
+	content: "\e602";
+}
+.icon-arrow-left:before {
+	content: "\e603";
+}
+.icon-arrow-right:before {
+	content: "\e604";
+}
+
 /* Common */
 .container {
 	position: relative;
@@ -19,6 +58,10 @@ h2 {
 .h2_sub {
 	margin-bottom: 30px;
 	font-size: 14px;
+}
+
+a img:hover {
+	opacity: 0.5;
 }
 
 /* Header */
@@ -90,6 +133,15 @@ h1 {
 	text-decoration: underline;
 }
 
+.user_menu .icon-twitter {
+	float: left;
+	color: #55acee;
+	font-size: 20px;
+	position: relative;
+	top: -1px;
+	margin-right: 3px;
+}
+
 /* Belt */
 .belt {
 	height: 40px;
@@ -127,6 +179,8 @@ h1 {
 .curators li {
 	float: left;
 	width: 215px;
+	height: 180px;
+	overflow: hidden;
 	padding: 10px;
 	margin-right: 20px;
 	border-bottom: 1px solid #ddd;
@@ -136,14 +190,33 @@ h1 {
 	margin-right: 0;
 }
 
-.curators .thumb {
+.curators_image {
 	float: left;
 	width: 50px;
+	margin: 0 5px 0 0;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-o-border-radius: 50%;
 	-ms-border-radius: 50%;
+}
+
+.curators_name {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+.curators_twitter {
+	margin-bottom: 10px;
+}
+
+.curators_twitter i {
+	color: #55acee;
+}
+
+.curators_description {
+	color: #555;
 }
 
 /* Posts */
@@ -177,9 +250,9 @@ h1 {
 .random_posts_title {
 	font-size: 18px;
 	color: #333;
-	margin: 10px 0;
+	margin: 5px 0;
 	height: 53px;
-	line-height: 1.6em;
+	line-height: 1.5em;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	-webkit-text-overflow: ellipsis;
@@ -188,6 +261,7 @@ h1 {
 .random_posts_comment {
 	font-size: 13px;
 	color: #999;
+	line-height: 1.2em;
 	height: 35px;
 	overflow: hidden;
 	word-wrap: break-word;
@@ -197,8 +271,9 @@ h1 {
 
 .top_left {
 	float: left;
-	width: 700px;
-	margin-right: 15px;
+	width: 699px;
+	padding-right: 15px;
+	border-right: 1px solid #eee;
 }
 
 .top_title_new {
@@ -227,23 +302,45 @@ h1 {
 .new_posts_title {
 	font-size: 18px;
 	color: #333;
-	margin: 10px 0 10px 0;
+	margin: 10px 0 5px 0;
 	line-height: 1.4em;
 	overflow: hidden;
 }
 
 .new_posts_comment {
-	font-size: 14px;
+	font-size: 13px;
+	line-height: 1.4em;
 	color: #999;
-	height: 53px;
-	overflow: hidden;
+	margin-bottom: 10px;
 	word-wrap: break-word;
 	text-overflow: ellipsis;
 	-webkit-text-overflow: ellipsis;
 }
 
+.new_posts_image {
+	float: left;
+	width: 25px;
+	margin-right: 5px;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+	position: relative;
+	top: -3px;
+}
 
+.new_posts_twitter {
+	color: #555;
+	float: left;
+}
 
+.new_posts_created {
+	float: left;
+	margin-left: 20px;
+	font-size: 14px;
+	color: #555;
+}
 
 .top_right {
 	float: left;
@@ -299,15 +396,24 @@ h1 {
 	float: left;
 	width: 760px;
 	margin: 10px 0;
-	font-size: 14px;
+	font-size: 15px;
+	color: #555;
+	line-height: 1.4em;
 	word-wrap: break-word;
+}
+
+.view_head_created {
+	float: left;
+	width: 760px;
+	margin: 0 0 10px 110px;
+	font-size: 14px;
+	color: #999;
 }
 
 .view_head_pv {
 	position: absolute;
 	right: 0;
 	top: 0;
-	background: white;
 	padding: 5px 0;
 	width: 100px;
 	font-size: 30px;
@@ -318,7 +424,7 @@ h1 {
 .view_head_pv span {
 	display: block;
 	font-size: 16px;
-	color: #ccc;
+	color: #999;
 }
 
 .view_recipe {
@@ -329,12 +435,17 @@ h1 {
 	margin-bottom: 40px; 
 }
 
+.view_recipe li:hover {
+	background: #f9f9f9;
+}
+
 .view_recipe_title {
-	font-size: 22px;
+	font-size: 26px;
 	font-weight: bold;
 	line-height: 1.2em;
 	padding-bottom: 5px;
 	border-bottom: 3px solid #fc7c79;
+	color: #333;
 }
 
 .view_recipe_image {
@@ -385,17 +496,41 @@ h1 {
 }
 
 .view_auther_name {
-	font-size: 16px;
+	font-size: 18px;
+	margin: 10px 0 0 0;
+}
+
+.view_auther_twitter {
+	margin: 0 0 10px 0;
+}
+
+.view_auther_twitter a {
+	font-size: 14px;
+	color: #555;
+}
+
+.view_auther_twitter:hover {
+	text-decoration: underline;
+}
+
+.view_auther_twitter i {
+	color: #55acee;
+	margin-right: 3px;
+	position: relative;
+	top: 2px;
 }
 
 .view_auther_description {
-	margin-left: 70px;
+	display: block;
+	font-size: 14px;
+	color: #555;
 }
 
 .ranking_title {
 	font-size: 18px;
 	font-weight: normal;
 	padding: 10px;
+	margin-top: 10px;
 }
 
 .ranking_list li {
@@ -417,6 +552,7 @@ h1 {
 	-webkit-border-radius: 50%;
 	-o-border-radius: 50%;
 	-ms-border-radius: 50%;
+	z-index: 999;
 }
 
 .ranking_list_thumb {

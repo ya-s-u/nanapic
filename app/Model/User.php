@@ -88,8 +88,7 @@ class User extends AppModel {
 	*/
 	public function getAllUser() {
 		$params = array(
-			'conditions' => array(
-			),
+			'order' => 'User.created desc',
 		);
 		return $this->find('all', $params);
 	}

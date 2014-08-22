@@ -27,7 +27,7 @@ class Post extends AppModel {
 		$params = array(
 			'order' => 'rand()',
 			'limit' => 3,
-			'recursive' => -1,
+			'recursive' => 1,
 		);
 		return $this->find('all', $params);
 	}
@@ -39,7 +39,7 @@ class Post extends AppModel {
 		$params = array(
 			'order' => 'Post.id desc',
 			'limit' => 20,
-			'recursive' => -1,
+			'recursive' => 1,
 		);
 		return $this->find('all', $params);
 	}

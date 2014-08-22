@@ -29,13 +29,13 @@
 			<h1><a href="//nanapi.trial.jp"><?=$this->Html->image('logo.png')?></a></h1>
 			<?php if($auth) :?>
 			<ul class="user_menu">
-				<li><a href="/posts/create" class="btn dashboard"><?=$this->Html->image($auth['User']['twitter_profile_img_url'])?>まとめをつくる</a></li>
-				<li><a href="/users/logout" class="btn logout">ログアウト</a></li>
+				<li><a href="/posts/create"><?=$this->Html->image($auth['User']['twitter_profile_img_url'])?>まとめをつくる</a></li>
+				<li><a href="/users/logout">ログアウト</a></li>
 			</ul>
 			<?php else :?>
 			<ul class="user_menu">
-				<li><a href="/twitters/redirect1" class="btn logout">ログイン</a></li>
-				<li><a href="/twitters/redirect1" class="btn logout">ユーザー登録</a></li>
+				<li><a href="/twitters/redirect1"><i class="icon-twitter"></i>ログイン</a></li>
+				<li><a href="/twitters/redirect1">ユーザー登録</a></li>
 			</ul>
 			<?php endif?>
 		</div>

@@ -19,6 +19,9 @@ class PostsController extends AppController {
 		
 		$NewPosts = $this->Post->getAllPosts();
         $this->set('NewPosts', $NewPosts);
+        
+		$PopularPosts = $this->Post->getPopularPosts();
+        $this->set('PopularPosts', $PopularPosts);
     }
 
 	/**
