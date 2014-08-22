@@ -51,6 +51,16 @@
 					<?php endforeach?>
 				</ul>
 			</div>
+			<div class="user">
+				<h2 class="user_title">キュレーター一覧</h2>
+				<ul class="user_list">
+					<?php foreach($Users as $user) :?>
+					<li>
+						<?= $this->Html->image($user['User']['twitter_profile_img_url'],array('class'=>'user_image'))?>
+					</li>
+					<?php endforeach?>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

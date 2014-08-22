@@ -22,6 +22,9 @@ class PostsController extends AppController {
         
 		$PopularPosts = $this->Post->getPopularPosts();
         $this->set('PopularPosts', $PopularPosts);
+        
+		$Users = $this->User->getAllUser();
+		$this->set('Users',$Users);
     }
 
 	/**
@@ -37,6 +40,9 @@ class PostsController extends AppController {
         $this->set('PopularPosts', $PopularPosts);
         
         $this->Post->incrementPv($id);
+        
+		$Users = $this->User->getAllUser();
+		$this->set('Users',$Users);
     }
 
     /**

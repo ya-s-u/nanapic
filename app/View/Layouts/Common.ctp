@@ -33,8 +33,7 @@
 			</ul>
 			<?php else :?>
 			<ul class="user_menu">
-				<li><a href="/twitters/redirect1"><i class="icon-twitter"></i>ログイン</a></li>
-				<li><a href="/twitters/redirect1">ユーザー登録</a></li>
+				<li><a href="/twitters/redirect1"><i class="icon-twitter"></i>ログイン/ユーザー登録</a></li>
 			</ul>
 			<?php endif?>
 		</div>

@@ -255,6 +255,10 @@ h1 {
 	margin-right: 0;
 }
 
+.random_posts li a {
+	display: block;
+}
+
 .random_posts_thumb {
 	overflow: hidden;
 }
@@ -293,9 +297,7 @@ h1 {
 	font-weight: normal;
 	padding-bottom: 5px;
 	border-bottom: 1px solid #eee;
-}
-
-.new_posts {
+	margin-top: 20px;
 }
 
 .new_posts li {
@@ -582,6 +584,36 @@ h1 {
 	font-weight: normal;
 	line-height: 1.4em;
 	color: #333;
+}
+
+.user_title {
+	font-size: 18px;
+	font-weight: normal;
+	padding: 20px 10px 10px 10px;
+	margin-top: 20px;
+	border-top: 1px solid #eee;
+}
+
+.user_list {
+	margin-left: 10px;
+}
+
+.user_list li {
+	float: left;
+	margin: 0 15px 10px 0;
+}
+
+.user_image {
+	width: 53px;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-ms-border-radius: 50%;
+}
+
+.user_list li:nth-child(4n) {
+	margin-right: 0;
 }
 
 
