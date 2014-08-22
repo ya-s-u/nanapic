@@ -42,7 +42,7 @@
 	<div id="footer">
 		<div class="container">
 			<p class="footer_text">Work on the nanapi summer internship 2014</p>
-			<p class="footer_cr">© 2014,8,22 nanapic created by <a href="https://twitter.com/ya_s_u" target="_blank">@ya_s_u</a></p>
+			<p class="footer_cr">© 2014/8/22 nanapic created by <a href="https://twitter.com/ya_s_u" target="_blank">@ya_s_u</a></p>
 		</div>
 	</div>
 <?=$this->html->script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')?>

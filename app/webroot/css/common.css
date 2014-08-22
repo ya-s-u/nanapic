@@ -458,6 +458,10 @@ h1 {
 	background: #f9f9f9;
 }
 
+.view_recipe li:hover .view_recipe_title {
+	text-decoration: underline;
+}
+
 .view_recipe_title {
 	font-size: 26px;
 	font-weight: bold;
