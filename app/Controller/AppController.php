@@ -2,7 +2,7 @@
 App::uses('Controller', 'Controller');
 
 class AppController extends Controller {
-	public $uses = array('User','Post','PostLink');
+	public $uses = array('User','Post','Recipe');
 	public $layout = 'Common';
 	public $helpers = array('Html','Form','Session');
 	public $components = array(
@@ -28,8 +28,8 @@ class AppController extends Controller {
 	public function beforeFilter() {
 		$auth_id = $this->Auth->user('id');
 		if($auth_id) {
-			$user = $this->User->getUser($auth_id);
-			$this->set('user',$user);
+			$auth = $this->User->getUser($auth_id);
+			$this->set('auth',$auth);
 		}
 
 	}

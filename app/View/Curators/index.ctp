@@ -13,10 +13,10 @@
 		<ul class="curators">
 		<?php foreach($Users as $user) :?>
 			<li>
-				<?= $this->Html->image($user['User']['twitter_profile_img_url'],array('class'=>'thumb'))?>
-				<h3><?=$user['User']['twitter_user_name']?></h3>
-				<p class="screen_name"><?=$user['User']['twitter_screen_name']?></p>
-				<p class="description"><?=$user['User']['twitter_description']?></p>
+				<?= $this->Html->image($user['User']['twitter_profile_img_url'],array('class'=>'curators_image'))?>
+				<h3 class="curators_name"><?=h($user['User']['twitter_user_name'])?></h3>
+				<p class="curators_twitter"><a href="https://twitter.com/<?=h($user['User']['twitter_screen_name'])?>" target="_blank"><i class="icon-twitter"></i><?=h($user['User']['twitter_screen_name'])?></a></p>
+				<p class="curators_description"><?=h($user['User']['twitter_description'])?></p>
 			</li>
 		<?php endforeach?>
 		</ul>

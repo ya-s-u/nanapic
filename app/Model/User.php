@@ -1,6 +1,4 @@
 <?php
-App::uses('AuthComponent', 'Controller/Component');
-
 class User extends AppModel {
 	public $name = 'User';
 
@@ -10,25 +8,19 @@ class User extends AppModel {
 	/**
 	* 登録済みが判定
 	*/
-	public function checkTwitterUserId($twitter_user_id) {
+	public function getUserByTwitterId($twitter_user_id) {
 		$params = array(
-			'conditions' => array(
-				'User.twitter_user_id' => $twitter_user_id,
-			),
-		);
-		$User = $this->find('first',$params);
-
-		if($User) {
-			return 1;
-		} else {
-			return 0;
-		}
+            'conditions' => array(
+                'User.twitter_user_id' => $twitter_user_id,
+            ),
+        );
+        return $this->find('first', $params);
 	}
 	
 	/**
 	* 新規ユーザー登録
 	*/
-	public function newUser($Data) {
+	public function createUser($Data) {
 		$this->set($Data);
 		$this->validates();
 		$this->create();
@@ -40,12 +32,7 @@ class User extends AppModel {
 			'created' => date("Y-m-d G:i:s"),
 			'modified' => date('Y-m-d H:i:s'),
 		);
-
-		if($this->save($this->data)) {
-			return 1;
-		} else {
-			return 0;
-		}
+		return $this->save($this->data);
 	}
 	
 	/**
@@ -61,7 +48,7 @@ class User extends AppModel {
 				'User.twitter_oauth_token_secret',
 			),
 		);
-		$Data = $this->find('first',$params);
+		$Data = $this->find('first', $params);
 		$access_token = $Data['User'];
 
 		return $access_token;
@@ -70,7 +57,7 @@ class User extends AppModel {
 	/**
 	* ユーザー名、使用言語、プロフィール画像URLを更新
 	*/
-	public function updateProfile($id,$Data) {
+	public function updateProfile($id, $Data) {
 		$this->updateAll(
 			array(
 				'User.twitter_user_name' => "'".$Data['name']."'",
@@ -81,7 +68,6 @@ class User extends AppModel {
 				'User.id' => $id,
 			)
 		);
-
 		return;
 	}
 	
@@ -93,12 +79,8 @@ class User extends AppModel {
 			'conditions' => array(
 				'User.id' => $id,
 			),
-			'fields' => Array(
-			),
 		);
-		$user = $this->find('first',$params);
-
-		return $user;
+		return $this->find('first', $params);
 	}
 	
 	/**
@@ -106,16 +88,9 @@ class User extends AppModel {
 	*/
 	public function getAllUser() {
 		$params = array(
-			'conditions' => array(
-			),
-			'fields' => Array(
-			),
+			'order' => 'User.created desc',
 		);
-		$Users = $this->find('all',$params);
-		
-		return $Users;
+		return $this->find('all', $params);
 	}
 
 }
-?>
-

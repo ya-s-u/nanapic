@@ -31,3 +31,10 @@ app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php
 app/[Cc]onfig/email.php
 !empty
+
+# phpStorm #
+######################
+.idea
+.iead/*
+*.xml
+.idea/scopes/scope_settings.xml

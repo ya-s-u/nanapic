@@ -27,6 +27,7 @@
  
  	//not required auth
 	Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
+	Router::connect('/view/*', array('controller' => 'posts', 'action' => 'view'));
 	
 
 
