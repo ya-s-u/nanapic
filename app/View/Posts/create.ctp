@@ -16,9 +16,9 @@
 				<div class="select_article_head">
 					<input type="text" ng-model="SearchText" id="ArticleSearch" placeholder="エンターキーを押して検索">
 					<div class="page_manage">
-						<i class="" ng-show="Status.has_prev" ng-click="changePage(SearchText,Status.current_page-1)">←</i>
+						<i class="icon-arrow-left" ng-show="Status.has_prev" ng-click="changePage(SearchText,Status.current_page-1)"></i>
 						<p class="page_num" ng-show="Recipes">{{Status.current_page}}/{{Status.page_count}}</p>
-						<i class="" ng-show="Status.has_next" ng-click="changePage(SearchText,Status.current_page+1)">→</i>
+						<i class="icon-arrow-right" ng-show="Status.has_next" ng-click="changePage(SearchText,Status.current_page+1)"></i>
 					</div>
 					<p class="select_article_count">選択中の記事数: <span>{{CountSelectedRecipes}}</span>/10</p>
 				</div>

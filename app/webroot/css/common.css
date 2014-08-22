@@ -304,6 +304,10 @@ h1 {
 	border-bottom: 1px solid #eee;
 }
 
+.new_posts li a {
+	display: block;
+}
+
 .new_posts_thumb {
 	float: left;
 	width: 150px;
@@ -420,6 +424,7 @@ h1 {
 	width: 760px;
 	font-size: 14px;
 	color: #999;
+	overflow: hidden;
 }
 
 .view_head_pv {
@@ -638,8 +643,14 @@ h1 {
 	text-align: center;
 }
 
+.icon-arrow-left, .icon-arrow-right {
+	position: relative;
+	top: 3px;
+}
+
 .page_num {
 	display: inline;
+	color: #555;
 }
 
 .select_article_count {
@@ -734,7 +745,6 @@ h1 {
 
 .sort_article_list li {
 	position: relative;
-	height: 31px;
 	padding: 5px;
 	overflow: hidden;
 	border-bottom: 1px solid #eee;
