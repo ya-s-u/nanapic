@@ -106,7 +106,8 @@ class Post extends AppModel {
 		$increment = array(  
     		'Post' => array(  
         		'id' => $id,  
-        		'pv_count' => $this->field('pv_count') + 1,  
+        		'pv_count' => $this->field('pv_count') + 1,
+        		'created' => false,
         	) 
 		);
 		return $this->save($increment, false, array('pv_count'));
